@@ -33,6 +33,7 @@
             .box {
                 padding: 20px;
                 margin: 0 auto;
+                margin-bottom: 15px;
                 max-width: 90%;
                 height: 100px;
                 background-image: -webkit-linear-gradient(top, #2d2e30, #38393b);
@@ -44,54 +45,100 @@
             */
 
             @media only screen and (max-width:768px) {
-                .box:before {
+                .box.max:before {
                     content: "MAX 768px";
                 }
 
-                .box {
+                .box.max {
                     background-image: -webkit-linear-gradient(top, #cfb3f8, #b792e1);
                 }
             }
 
             @media only screen and (max-width:520px) {
-                .box:before {
+                .box.max:before {
                     content: "MAX 520px";
                 }
 
-                .box {
+                .box.max {
                     background-image: -webkit-linear-gradient(top, #91b8f6, #5e90cf);
                 }
             }
 
             @media only screen and (max-width:320px) {
-                .box:before {
+                .box.max:before {
                     content: "MAX 320px";
                 }
 
-                .box {
+                .box.max {
                     background-image: -webkit-linear-gradient(top, #c1e875, #a8c965);
                 }
             }
 
             @media only screen and (min-width:1200px) {
-                .box:before {
+                .box.max:before {
                     content: "MIN 1200px";
                 }
 
-                .box {
+                .box.max {
                     background-image: -webkit-linear-gradient(top, #6cece5, #50d0c6);
                 }
             }
 
             /*
-                Pattern that uses max-width for breakpoints and min-width for everything above a certain width
+                Pattern that uses min-width for breakpoints
             */
 
+            /*
+                Notice how this is never triggered
+            */
+            @media only screen and (min-width:768px) {
+                .box.min:before {
+                    content: "MIN 768px";
+                }
+
+                .box.min {
+                    background-image: -webkit-linear-gradient(top, #cfb3f8, #b792e1);
+                }
+            }
+            /*
+                Notice how this is never triggered
+            */
+            @media only screen and (min-width:520px) {
+                .box.min:before {
+                    content: "MIN 520px";
+                }
+
+                .box.min {
+                    background-image: -webkit-linear-gradient(top, #91b8f6, #5e90cf);
+                }
+            }
+
+            @media only screen and (min-width:320px) {
+                .box.min:before {
+                    content: "MIN 320px";
+                }
+
+                .box.min {
+                    background-image: -webkit-linear-gradient(top, #c1e875, #a8c965);
+                }
+            }
+
+            @media only screen and (min-width:1200px) {
+                .box.min:before {
+                    content: "MIN 1200px";
+                }
+
+                .box.min {
+                    background-image: -webkit-linear-gradient(top, #6cece5, #50d0c6);
+                }
+            }
         </style>
     </head>
     <body>
 
-        <div class="box"></div>
+        <div class="box max"></div>
+
+        <div class="box min"></div>
 
     </body>
 </html>
